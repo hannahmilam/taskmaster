@@ -10,6 +10,7 @@ class TasksService{
 
   addTasks(tasksData){
 ProxyState.tasks = [...ProxyState.tasks, new Task(tasksData)]
+console.log(ProxyState.tasks)
   }
 }
 

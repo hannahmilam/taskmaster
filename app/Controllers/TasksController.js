@@ -5,13 +5,13 @@ import { tasksService } from "../Services/TasksService.js"
 export class TasksController{
   constructor(){
   }
-addTasks(){
+addTasks(listId){
 event.preventDefault()
 let form = event.target
 
 let taskData={
-listItem: form.value,
-id: form.id.value
+listId: listId,
+listItem: form.listItem.value
 }
 tasksService.addTasks(taskData)
   }

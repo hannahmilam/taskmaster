@@ -11,25 +11,54 @@
 
   <link rel="stylesheet" href="assets/style/main.css">
   <link rel="stylesheet" href="assets/style/style.css">
-  <title>taskmaster</title>
+  <title>Taskmaster</title>
 </head>
 
-<body>
+<body class="bg-img">
   <header>
-    <nav class="navbar navbar-dark navbar-expand bg-dark text-light no-select">
-      <a class="navbar-brand ms-3" href="#">
-        <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
-          loading="lazy">
-        <span class="ms-2">taskmaster</span>
+    <nav class="navbar navbar-expand text-dark no-select">
+      <a class="navbar-brand ms-3">
+        <img src="assets/img/tm-logo.png" height="45" alt="" loading="lazy">
+        <span class="ms-2">Taskmaster</span>
       </a>
     </nav>
   </header>
   <main>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-12">
-          <div id="app"></div>
+        <div class="col-lg-3 my-3">
+          <form class="form-inline" onsubmit="app.checklistController.addChecklist()">
+            <div class="form-group ms-3 rounded">
+              <div class="input-group">
+                <input type="text" name="labelName" id="labelName" class="form-control rounded"
+                  aria-label="Text input with dropdown button" placeholder="List Name...">
+              </div>
+            </div>
         </div>
+        <div class="col-lg-2 my-3">
+          <div class="form-group ms-3 rounded bg-secondary">
+            <select name="color" id="color" required class="form-control">
+              <option disabled selected value="">Color:</option>
+              <option>pink</option>
+              <option>blue</option>
+              <option>green</option>
+              <option>purple</option>
+              <option>orange</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-2 my-3">
+          <div class="form-group ms-3 rounded">
+            <button class="btn btn-secondary ms-2 rounded" type="submit" id="button-addon1">Create</button>
+          </div>
+        </div>
+        </form>
+      </div>
+
+
+      <div class="row" id="checklist">
+        <!-- CHECKLIST ITEMS & SECTIONS GO HERE -->
+
       </div>
     </div>
   </main>

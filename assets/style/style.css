@@ -1,1 +1,25 @@
-/* BASIC STYLES HERE */
+.bg-img{
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.pink-color{
+  background-color: #ffc0cbaf;
+}
+
+.blue-color{
+  background-color: #5eafe6ad;
+}
+
+.green-color{
+  background-color: #79b87996;
+}
+
+.purple-color{
+  background-color: rgba(199, 111, 199, 0.596);
+}
+.orange-color{
+  background-color: rgba(241, 178, 82, 0.623);
+}

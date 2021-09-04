@@ -8,9 +8,16 @@
   <link rel="icon" href="https://bcw.blob.core.windows.net/public/img/9977764104160066">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@5.9.55/css/materialdesignicons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kaisei+HarunoUmi&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="assets/style/main.css">
-  <link rel="stylesheet" href="assets/style/style.css">
+  <link rel="stylesheet" href="./assets/style/main.css">
+  <link rel="stylesheet" href="./assets/style/style.css">
   <title>Taskmaster</title>
 </head>
 
@@ -18,8 +25,7 @@
   <header>
     <nav class="navbar navbar-expand text-dark no-select">
       <a class="navbar-brand ms-3">
-        <img src="assets/img/tm-logo.png" height="45" alt="" loading="lazy">
-        <span class="ms-2">Taskmaster</span>
+        <h1> <i class="fas fa-check"></i> TaskMaster</h1>
       </a>
     </nav>
   </header>
@@ -30,14 +36,14 @@
           <form class="form-inline" onsubmit="app.checklistController.addChecklist()">
             <div class="form-group ms-3 rounded">
               <div class="input-group">
-                <input type="text" name="labelName" id="labelName" class="form-control rounded"
-                  aria-label="Text input with dropdown button" placeholder="List Name...">
+                <input type="text" name="labelName" id="labelName" minlength="3" maxlength="15"
+                  class="form-control rounded" placeholder="List Name..." required>
               </div>
             </div>
         </div>
         <div class="col-lg-2 my-3">
           <div class="form-group ms-3 rounded bg-secondary">
-            <select name="color" id="color" required class="form-control">
+            <select name="color" id="color" required class="form-control text-secondary">
               <option disabled selected value="">Color:</option>
               <option>pink</option>
               <option>blue</option>
@@ -62,12 +68,11 @@
       </div>
     </div>
   </main>
-  <footer class="bg-dark text-light">
-    <div class="text-center no-select">
-      <p><small>Made with 💖 by Codeworks</small></p>
-    </div>
-  </footer>
+  <footer>
 
+  </footer>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
     crossorigin="anonymous"></script>

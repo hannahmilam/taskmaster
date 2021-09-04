@@ -29,7 +29,10 @@ addChecklist(){
 }
 
 deleteChecklist(checklistId){
-checklistService.deleteChecklist(checklistId)
-}
 
+  var result = confirm("Are you sure to delete?");
+  if(result){
+    checklistService.deleteChecklist(checklistId)
+  }
+}
 }

@@ -9,9 +9,9 @@ export class Task{
 
   get Template(){
     return /*html*/`
-    <div class="form-group ms-2">
+    <div class="form-group ms-2 my-2">
     <input type="checkbox" name="listItem" id="listItem">
-    <label for="listItem" class="">${this.listItem}</label>
+    <label for="listItem" class="" minlength="3" maxlength="50" required>${this.listItem} <span><i class="mdi mdi-close mdi-6px" onclick="app.tasksController.deleteTask('${this.id}')"></i></span></label>
     </div>
     `
   }

@@ -15,4 +15,18 @@ listItem: form.listItem.value
 }
 tasksService.addTasks(taskData)
   }
+
+
+deleteTask(listId){
+  var result = confirm("Are you sure to delete?");
+  if(result){
+    tasksService.deleteTask(listId)
+  }
+  }
 }
+
+
+
+
+
+  

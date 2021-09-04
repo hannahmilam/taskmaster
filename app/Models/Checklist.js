@@ -11,14 +11,15 @@ constructor(checklistData){
 get checklistTemplate(){
 return /*html*/ `
 <div class="col-lg-3">
-<div class="card mt-3">
-  <div class="card-header ${this.color}-color text-center pt-3">
-    <h5>${this.labelName}</h5>
+<div class="card mt-3 shadow">
+  <div class="card-header ${this.color}-color text-end pt-3">
+    <h5>${this.labelName} &emsp; &emsp; &emsp; <i class="mdi mdi-close mdi-3px" onclick="app.checklistController.deleteChecklist('${this.id}')"></i>
+    </h5>
   </div> 
   <h5>${this.Task}</h5>
       <div class="input-group my-3">
       <form onsubmit="app.tasksController.addTasks('${this.id}')">
-      <input name="listItem" type="text" class="form-control ms-2" placeholder="Add Task.."
+      <input name="listItem" type="text" class="form-control ms-2" minlength="3" maxlength="15" required placeholder="Add Task.."
         aria-label="Example text with button addon" aria-described by="button-addon1">
       <button class="btn btn-outline-secondary ms-2 mt-2" type="submit" id="button-addon1">+</button>
       </div>

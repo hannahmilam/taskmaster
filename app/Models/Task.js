@@ -5,6 +5,8 @@ export class Task{
     this.listItem = taskData.listItem
     this.id = taskData.id || generateId()
     this.listId = taskData.listId
+    this.qty = taskData.qty
+    this.completedTasks = taskData.completedTasks
   }
 
   get Template(){

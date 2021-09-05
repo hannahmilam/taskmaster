@@ -20,19 +20,53 @@ addChecklist(){
   event.preventDefault()
   let form = event.target
   let checklistItemData = {
+    // @ts-ignore
     labelName: form.labelName.value,
+    // @ts-ignore
     color: form.color.value
   }
   checklistService.addChecklist(checklistItemData)
+  // @ts-ignore
   form.reset()
   
 }
 
 deleteChecklist(checklistId){
+  // let result = confirm('are you sure you want to delete?')
+  // if(result == true){
+  //   checklistService.deleteChecklist(checklistId)
+  // }
 
-  var result = confirm("Are you sure to delete?");
-  if(result){
-    checklistService.deleteChecklist(checklistId)
-  }
+  const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+      confirmButton: 'btn btn-success',
+      cancelButton: 'btn btn-danger'
+    },
+    buttonsStyling: false
+  })
+  
+  swalWithBootstrapButtons.fire({
+    title: 'Are you sure?',
+    text: "You won't be able to revert this!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Yes, delete it!',
+    cancelButtonText: 'No, cancel!',
+    reverseButtons: true
+  }).then((result) => {
+    if (result.isConfirmed) {
+      swalWithBootstrapButtons.fire(
+        'Deleted!',
+        'Your checklist has been deleted.',
+        'success'
+      )
+      checklistService.deleteChecklist(checklistId)
+    } else if (
+      /* Read more about handling dismissals below */
+      result.dismiss === Swal.DismissReason.cancel
+    ) {
+      
+    }
+  })
 }
 }

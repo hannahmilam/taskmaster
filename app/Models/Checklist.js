@@ -12,9 +12,10 @@ get checklistTemplate(){
 return /*html*/ `
 <div class="col-lg-3">
 <div class="card mt-3 shadow">
-  <div class="card-header ${this.color}-color text-end pt-3">
-    <h5>${this.labelName} &emsp; &emsp; &emsp; <i class="mdi mdi-close mdi-3px" onclick="app.checklistController.deleteChecklist('${this.id}')"></i>
+  <div class="card-header ${this.color}-color text-center pt-3">
+    <h5>${this.labelName} <i class="mdi mdi-close mdi-3px" onclick="app.checklistController.deleteChecklist('${this.id}')"></i>
     </h5>
+    <p>${this.TasksCount}</p>
   </div> 
   <h5>${this.Task}</h5>
       <div class="input-group my-3">
@@ -34,5 +35,15 @@ get Task(){
     let foundTask = ProxyState.tasks.filter(t => t.listId == this.id)
     foundTask.forEach(t => template += t.Template)
     return template
+  }
+
+  get TasksCount(){
+    let totalCount = 0
+    let completedCount = 0
+   let foundTasks = ProxyState.tasks.filter(t => t.listId == this.id)
+   let completedTasks = foundTasks.filter(f => f.checked === 'checked')
+    completedCount = completedTasks.length
+   totalCount = foundTasks.length 
+   return (completedCount + '/' + totalCount)
   }
 }

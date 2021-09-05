@@ -1,6 +1,6 @@
 import { ProxyState } from "../AppState.js";
 import { TasksController } from "../Controllers/TasksController.js";
-import { saveState } from "../Localstorage.js";
+import { loadState, saveState } from "../Localstorage.js";
 import { Task } from "../Models/Task.js";
 
 
@@ -20,6 +20,17 @@ console.log(ProxyState.tasks)
     ProxyState.checklistItems = ProxyState.checklistItems.filter(c => c.id !== listId)
     
     }
+
+    setChecked(id){
+      let foundTask = ProxyState.tasks.find(t => t.id === id)
+      if(foundTask.checked == 'unchecked'){
+        foundTask.checked = 'checked'
+      } else {foundTask.checked = 'unchecked'}
+      saveState()
+      loadState()
+    
+      // @ts-ignore
+     }
 
 }
 

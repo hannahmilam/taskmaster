@@ -1,8 +1,9 @@
 import { ProxyState } from "../AppState.js"
 import { ChecklistController } from "../Controllers/ChecklistController.js"
-import { saveState } from "../Localstorage.js"
+import { loadState, saveState } from "../Localstorage.js"
 import { Checklist } from "../Models/Checklist.js"
 import { Task } from "../Models/Task.js"
+
 
 
 

@@ -24,6 +24,7 @@ deleteTask(listId){
   //   tasksService.deleteTask(listId)
   // }
   // }
+    // @ts-ignore
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
         confirmButton: 'btn btn-success',
@@ -49,7 +50,7 @@ deleteTask(listId){
         )
         tasksService.deleteTask(listId)
       } else if (
-        /* Read more about handling dismissals below */
+        // @ts-ignore
         result.dismiss === Swal.DismissReason.cancel
       ) {
         

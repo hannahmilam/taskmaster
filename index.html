@@ -29,9 +29,11 @@
       </a>
     </nav>
   </header>
+
   <main>
     <div class="container-fluid">
       <div class="row">
+        <!-- Create initial checklist goes here -->
         <div class="col-lg-3 my-3">
           <form class="form-inline" onsubmit="app.checklistController.addChecklist()">
             <div class="form-group ms-3 rounded">
@@ -41,6 +43,7 @@
               </div>
             </div>
         </div>
+
         <div class="col-lg-2 my-3">
           <div class="form-group ms-3 rounded bg-secondary">
             <select name="color" id="color" required class="form-control text-secondary">
@@ -53,6 +56,7 @@
             </select>
           </div>
         </div>
+
         <div class="col-2 my-3">
           <div class="form-group ms-3 rounded">
             <button class="btn btn-secondary ms-2 rounded" type="submit" id="button-addon1">Create</button>
@@ -61,6 +65,7 @@
         </form>
       </div>
     </div>
+
     <div class="container-fluid">
       <div class="row" id="checklist">
         <!-- CHECKLIST ITEMS & SECTIONS GO HERE -->
@@ -71,8 +76,6 @@
   <footer>
 
   </footer>
-  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
-
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"

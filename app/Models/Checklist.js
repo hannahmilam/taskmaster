@@ -8,6 +8,7 @@ constructor(checklistData){
   this.color = checklistData.color
   this.id = checklistData.id || generateId()
 }
+
 get checklistTemplate(){
 return /*html*/ `
 <div class="col-lg-3">

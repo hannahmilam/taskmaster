@@ -37,6 +37,7 @@ deleteChecklist(checklistId){
   //   checklistService.deleteChecklist(checklistId)
   // }
 
+  // @ts-ignore
   const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
       confirmButton: 'btn btn-success',
@@ -62,7 +63,7 @@ deleteChecklist(checklistId){
       )
       checklistService.deleteChecklist(checklistId)
     } else if (
-      /* Read more about handling dismissals below */
+      // @ts-ignore
       result.dismiss === Swal.DismissReason.cancel
     ) {
       
